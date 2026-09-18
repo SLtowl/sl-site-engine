@@ -29,6 +29,15 @@ test('OpenAI metadata icons exist', async () => {
   for (const icon of icons) assert.equal(await exists(path.resolve(skillRoot, icon)), true, `Missing ${icon}`);
 });
 
+test('README uses the approved compact presentation', async () => {
+  const readme = await fs.readFile(path.join(root, 'README.md'), 'utf8');
+  assert.match(readme, /^# SL Site Engine\n/);
+  assert.match(readme, /## What you get\n/);
+  assert.match(readme, /### Choose a layout\n/);
+  assert.match(readme, /<details>\s*<summary>Requirements and limits<\/summary>/);
+  assert.doesNotMatch(readme, /[\u2013\u2014]|^\| Step \||npm run motion:|## Development/m);
+});
+
 test('removed legacy demo assets are absent from the public checkout', async () => {
   assert.equal(await exists(path.join(root, 'examples', 'rune-directions')), false);
   assert.equal(await exists(path.join(root, 'assets', 'process.png')), false);
