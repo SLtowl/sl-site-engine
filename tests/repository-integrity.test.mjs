@@ -2,7 +2,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import sharp from 'sharp';
 
@@ -30,32 +29,14 @@ test('OpenAI metadata icons exist', async () => {
   for (const icon of icons) assert.equal(await exists(path.resolve(skillRoot, icon)), true, `Missing ${icon}`);
 });
 
-test('the browser example contains ten unique two-screen 1440 by 900 references', async () => {
-  const exampleRoot = path.join(root, 'examples', 'rune-directions');
-  const report = JSON.parse(await fs.readFile(path.join(exampleRoot, 'capture-report.json'), 'utf8'));
-  assert.equal(report.length, 20);
-  assert.equal(new Set(report.map(item => item.id)).size, 10);
-  assert.deepEqual(new Set(report.map(item => item.view)), new Set(['hero', 'next']));
-  assert.equal(new Set(report.map(item => item.sha256)).size, 20);
-
-  for (const item of report) {
-    assert.equal(item.width, 1440);
-    assert.equal(item.height, 900);
-    assert.ok(item.changedPixelRatio <= 0.0005, `${item.id} drifted ${item.changedPixelRatio}`);
-    const file = path.join(exampleRoot, item.file);
-    const buffer = await fs.readFile(file);
-    assert.equal(createHash('sha256').update(buffer).digest('hex'), item.sha256);
-    const metadata = await sharp(buffer).metadata();
-    assert.equal(metadata.width, 1440);
-    assert.equal(metadata.height, 900);
-  }
+test('removed legacy demo assets are absent from the public checkout', async () => {
+  assert.equal(await exists(path.join(root, 'examples', 'rune-directions')), false);
+  assert.equal(await exists(path.join(root, 'assets', 'process.png')), false);
 });
 
-test('public visuals and generated subject media have the expected shape', async () => {
+test('approved promotional visuals have the expected shape', async () => {
   const checks = [
     ['cover.png', 1672, 941],
-    ['assets/process.png', 1600, 840],
-    ['examples/rune-directions/browser.png', 1600, 1000],
     ['assets/media/site-engine-poster.png', 1920, 1080],
     ['assets/media/sl-site-engine-preview.gif', 720, 405]
   ];
@@ -65,31 +46,14 @@ test('public visuals and generated subject media have the expected shape', async
     assert.equal(metadata.height, height, relative);
   }
 
-  const product = await sharp(path.join(root, 'examples', 'rune-directions', 'media', 'rune-product.png')).metadata();
-  assert.equal(product.hasAlpha, true, 'the isolated product asset must preserve transparency');
 });
 
-test('the README cover stays independent and the example hierarchy is intentional', async () => {
-  const exampleRoot = path.join(root, 'examples', 'rune-directions');
-  assert.equal(await exists(path.join(exampleRoot, 'cover.html')), false);
-  assert.equal(await exists(path.join(exampleRoot, 'cover.css')), false);
-
-  const capture = await fs.readFile(path.join(exampleRoot, 'capture.mjs'), 'utf8');
-  assert.doesNotMatch(capture, /cover\.(?:html|png)/);
-
+test('README keeps approved media, omits the rejected gallery and ends with License', async () => {
   const readme = await fs.readFile(path.join(root, 'README.md'), 'utf8');
-  const exampleImages = [...readme.matchAll(/examples\/rune-directions\/screenshots\/[^)]+\.png/g)].map(match => match[0]);
-  assert.equal(exampleImages.length, 20);
-  assert.equal(exampleImages.filter(image => image.endsWith('-hero.png')).length, 10);
-  assert.equal(exampleImages.filter(image => image.endsWith('-next.png')).length, 10);
-
-  const detailsStart = readme.indexOf('<details>');
-  const detailsEnd = readme.indexOf('</details>');
-  assert.ok(detailsStart > 0 && detailsEnd > detailsStart);
-  assert.match(readme.slice(detailsStart, detailsEnd), /View All Directions/);
-  assert.equal((readme.slice(0, detailsStart).match(/examples\/rune-directions\/screenshots\//g) ?? []).length, 2);
-  assert.equal((readme.slice(detailsStart, detailsEnd).match(/examples\/rune-directions\/screenshots\//g) ?? []).length, 18);
-
+  assert.match(readme, /\]\(cover\.png\)/);
+  assert.match(readme, /assets\/media\/sl-site-engine-preview\.gif/);
+  assert.match(readme, /assets\/media\/sl-site-engine\.mp4/);
+  assert.doesNotMatch(readme, /rune-directions|Product Console|one-direction-fully-visible|assets\/process\.png/i);
   const headings = [...readme.matchAll(/^## (.+)$/gm)].map(match => match[1]);
   assert.equal(headings.at(-1), 'License');
 });
@@ -141,7 +105,7 @@ test('the Russian readme remains local-only', async () => {
 test('source files contain no unfinished scaffold markers', async () => {
   const targets = [
     'README.md',
-    'examples/rune-directions/MEDIA.md'
+    'assets/media/PROVENANCE.md'
   ];
   for (const target of targets) {
     const source = await fs.readFile(path.join(root, target), 'utf8');

@@ -3,7 +3,7 @@
 <h1 align="center">SL Site Engine</h1>
 <p align="center"><strong>Beyond default pages. New directions for every brief.</strong></p>
 <p align="center">A design-exploration skill for Codex — from a short brief to a reference rendered from real code.</p>
-<p align="center"><a href="#install">Install</a> · <a href="#the-idea-in-motion">Watch</a> · <a href="#one-direction-fully-visible">Explore</a> · <a href="#how-it-works">Workflow</a></p>
+<p align="center"><a href="#install">Install</a> · <a href="#the-idea-in-motion">Watch</a> · <a href="#how-it-works">Workflow</a></p>
 
 Build a direction around the business, not a preset. Choose the composition, agree on the content and controls, then see an actual browser screenshot of the proposed page. Generated photography and illustrations can enrich the design; the typography and interface stay editable in code.
 
@@ -32,79 +32,6 @@ Node.js/npm is needed for the installation command and optional development tool
 [Watch or download the full MP4](https://github.com/SLtowl/sl-site-engine/raw/refs/heads/main/assets/media/sl-site-engine.mp4) · 8 seconds · 60 FPS · 1920 × 1080 · silent loop
 
 The cover and film are promotional artwork, not screenshots of generated working websites. The GIF is a lighter preview; the full video is 60 FPS.
-
-## One direction, fully visible
-
-### Product Console
-
-A fictional speaker concept, shown as an opening screen and its continuation. These RUNE examples are an earlier development gallery, retained to demonstrate browser-rendered output and layout variety. They are not evidence that the latest skill outperforms a baseline, and may contain treatments excluded by the current rules.
-
-![Product Console hero rendered from HTML and CSS](examples/rune-directions/screenshots/05-product-console-hero.png)
-
-![Product Console continuation rendered from the same implementation](examples/rune-directions/screenshots/05-product-console-next.png)
-
-<details>
-<summary><strong>View All Directions</strong></summary>
-
-<br>
-
-Each pair is a captured 1440 × 900 browser render: an opening screen and its continuation. These are examples, not ten fixed templates that the skill applies to new businesses.
-
-### Quiet Monolith
-
-| Hero | Section 02 |
-| --- | --- |
-| ![Quiet Monolith hero](examples/rune-directions/screenshots/01-quiet-monolith-hero.png) | ![Quiet Monolith continuation](examples/rune-directions/screenshots/01-quiet-monolith-next.png) |
-
-### Architectural Room
-
-| Hero | Section 02 |
-| --- | --- |
-| ![Architectural Room hero](examples/rune-directions/screenshots/02-architectural-room-hero.png) | ![Architectural Room continuation](examples/rune-directions/screenshots/02-architectural-room-next.png) |
-
-### Material Index
-
-| Hero | Section 02 |
-| --- | --- |
-| ![Material Index hero](examples/rune-directions/screenshots/03-material-index-hero.png) | ![Material Index continuation](examples/rune-directions/screenshots/03-material-index-next.png) |
-
-### Type and Object
-
-| Hero | Section 02 |
-| --- | --- |
-| ![Type and Object hero](examples/rune-directions/screenshots/04-type-and-object-hero.png) | ![Type and Object continuation](examples/rune-directions/screenshots/04-type-and-object-next.png) |
-
-### Object Archive
-
-| Hero | Section 02 |
-| --- | --- |
-| ![Object Archive hero](examples/rune-directions/screenshots/06-object-archive-hero.png) | ![Object Archive continuation](examples/rune-directions/screenshots/06-object-archive-next.png) |
-
-### Sound Field
-
-| Hero | Section 02 |
-| --- | --- |
-| ![Sound Field hero](examples/rune-directions/screenshots/07-sound-field-hero.png) | ![Sound Field continuation](examples/rune-directions/screenshots/07-sound-field-next.png) |
-
-### Paper Review
-
-| Hero | Section 02 |
-| --- | --- |
-| ![Paper Review hero](examples/rune-directions/screenshots/08-paper-review-hero.png) | ![Paper Review continuation](examples/rune-directions/screenshots/08-paper-review-next.png) |
-
-### Crop Study
-
-| Hero | Section 02 |
-| --- | --- |
-| ![Crop Study hero](examples/rune-directions/screenshots/09-crop-study-hero.png) | ![Crop Study continuation](examples/rune-directions/screenshots/09-crop-study-next.png) |
-
-### Direct Catalogue
-
-| Hero | Section 02 |
-| --- | --- |
-| ![Direct Catalogue hero](examples/rune-directions/screenshots/10-direct-catalogue-hero.png) | ![Direct Catalogue continuation](examples/rune-directions/screenshots/10-direct-catalogue-next.png) |
-
-</details>
 
 ## How it works
 
@@ -143,11 +70,10 @@ The complete gate is documented in [the anti-slop reference](skill/sl-site-engin
 
 ```sh
 npm install
-npx playwright install chromium
 npm run verify
 ```
 
-`npm run verify` rebuilds the earlier RUNE gallery's 20 screenshots, tests its viewer, runs repository checks and audits its 45 direction pairs. It overwrites gallery capture artifacts; it does not regenerate the cover or film. These technical checks do not measure aesthetic superiority.
+`npm run verify` runs skill-resource checks, direction-audit tests and repository/media integrity checks. It does not regenerate the cover or film. These technical checks do not measure aesthetic superiority.
 
 ```sh
 npm run motion:studio
@@ -155,10 +81,10 @@ npm run motion:poster
 npm run motion:render
 ```
 
-The installable skill lives in `skill/sl-site-engine/`, separate from examples and promotional media. It works without SL UI Library; if you select [SL UI Library](https://github.com/SLtowl/sl-ui-library) or another connected library, the agent must inspect real components and disclose anything unavailable.
+The installable skill lives in `skill/sl-site-engine/`, separate from promotional media. It works without SL UI Library; if you select [SL UI Library](https://github.com/SLtowl/sl-ui-library) or another connected library, the agent must inspect real components and disclose anything unavailable.
 
-The film source is in `motion/`; the MP4 is H.264, 1920 × 1080, 60 FPS, 480 frames, eight seconds, without audio. See [media provenance](examples/rune-directions/MEDIA.md). Also by SL: [Graphite Dashboard Design](https://github.com/SLtowl/graphite-dashboard-design).
+The film source is in `motion/`; the MP4 is H.264, 1920 × 1080, 60 FPS, 480 frames, eight seconds, without audio. See [media provenance](assets/media/PROVENANCE.md). Also by SL: [Graphite Dashboard Design](https://github.com/SLtowl/graphite-dashboard-design).
 
 ## License
 
-[MIT](LICENSE). Bundled font files remain under their included SIL Open Font License notices.
+[MIT](LICENSE).
