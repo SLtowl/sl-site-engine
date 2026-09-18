@@ -12,6 +12,8 @@ Ask no more than three short adaptive questions in one batch when practical. Reu
 
 When missing assets are essential, address their source in the relevant question rather than adding a fourth round. If three questions cannot cover everything, prioritize decisions that change the result and state noncritical assumptions. Do not repeatedly reopen intake. Existing approved copy/brand decisions take priority.
 
+Resolve the code target once using [implementation-targets.md](implementation-targets.md). If it is neither specified nor detectable in a supplied project, offer HTML/CSS/JavaScript, React, Next.js (React), or help choosing. Fold this into the initial batch when there is room; otherwise ask at the selected-direction checkpoint before coding. Do not skip the palette/control-shape question to make room, treat HTML and CSS as alternatives, or silently select Next.js for a user who requested React. Reuse known technical decisions instead of repeating the question.
+
 Reuse any selected UI library, requested label-plus-icon treatment, rejected punctuation and desired content density in the brief. If “marks/logos on buttons” is ambiguous, clarify whether the user means action icons, brand marks or component styling; these are different requests. Resolve this within the existing preference question or a focused feedback clarification, not a new mandatory questionnaire. A rejected arrow is not a rejection of every meaningful icon.
 
 Before generating a visual, record how colors, control shape and graphic richness were handled: supplied, answered, explicitly delegated/skipped, or offered but unanswered. If any is absent and no explicit skip applies, ask the one grouped preference question. “Start”, “be creative”, or delegation of a name/general concept is not a palette-and-controls answer. If a user explicitly says “no questions” or delegates those specific choices, proceed with a short proposed system. An unanswered optional question permits stated provisional choices, never invented consent. Research consent remains separate.
@@ -74,6 +76,10 @@ density_choice: "pending calmer/richer visual pair | approved density with evide
 composition_sketch_count: "normally 2–3 for one final reference; respect explicit limits"
 graphic_treatments: "proposed options and research basis | selected treatment | open"
 approved_scope: ""
+implementation_target: "unresolved | html-css-js | react | nextjs | existing-other"
+target_basis: "supplied | detected in project | user-selected | recommendation | provisional"
+target_evidence: "actual request, inspected project setup, or stated recommendation"
+project_setup: "existing router/language/package manager/style system | proposed new setup"
 viewport: "width x height and device scale"
 direction_count: "final-reference count; separate from exploratory sketch count"
 ```

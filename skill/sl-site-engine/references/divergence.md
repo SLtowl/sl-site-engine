@@ -107,3 +107,5 @@ node scripts/audit-direction-set.mjs path/to/direction-set.json --stage referenc
 ```
 
 The script catches structural failures. It does not replace visual judgment.
+
+The `implementation.prototype` value is the local entry file, not necessarily HTML. For React use the actual JSX/TSX entry component; for Next.js use the page file. Record `stack`, `runCommand`, `previewRoute` and `buildCheck` alongside it when relevant. The file audit verifies that the entry exists, not that the framework compiles, hydrates or renders correctly; those need the runtime checks in [implementation-targets.md](implementation-targets.md).

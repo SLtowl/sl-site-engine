@@ -1,6 +1,6 @@
 # SL Site Engine
 
-A skill for Codex and Claude Code. Choose a website design and get its browser preview with editable HTML and CSS.
+A skill for Codex and Claude Code. Choose a website design and get its browser preview with editable code in HTML/CSS/JavaScript, React or Next.js.
 
 ![SL Site Engine cover](cover.png)
 
@@ -10,6 +10,7 @@ A skill for Codex and Claude Code. Choose a website design and get its browser p
 
 - **A choice of layouts.** Compare compositions before committing to one.
 - **A reference with code.** The final image is a screenshot of the supplied prototype.
+- **A format that fits your project.** Keep your existing stack, choose one, or ask for a recommendation.
 - **Details chosen for your project.** Agree on colors, button shapes, content and visual density.
 
 Ask for one page or several directions. Photos and illustrations can be generated separately; text and controls remain editable.
@@ -67,6 +68,15 @@ Use deep blue and black, with rectangular controls. Start with the first screen.
 
 Already have a brief, images or a component library? Include them in the task. The skill uses decisions you have already made.
 
+**Choose the implementation format**
+
+```text
+Use $sl-site-engine to create a homepage reference in Next.js.
+Build the selected direction in that project and capture its browser preview.
+```
+
+You can choose HTML/CSS/JavaScript, React, Next.js (React), or ask for help choosing. If your project already uses a framework, the agent keeps it unless you request a change. HTML and CSS are used together, not offered as competing formats.
+
 ## Preview
 
 [![Website designs on floating 3D panels](assets/media/sl-site-engine-preview.gif)](assets/media/sl-site-engine.mp4)
@@ -81,6 +91,8 @@ The cover and video are promotional artwork, not working website examples.
 
 The agent asks up to three initial questions about your business, brand voice, palette, controls and amount of detail. It recommends looking at relevant websites and design references, but searches only with your permission.
 
+Before coding, it also resolves the implementation format. Known choices are reused; if you are unsure, it recommends a setup based on the page and how you plan to use it.
+
 ### Choose a layout
 
 For one final reference, you usually compare two or three sketches. If you asked for several directions, you choose from that set.
@@ -89,7 +101,7 @@ After choosing, you compare a calmer and a richer version and agree on the conte
 
 ### See the page in a browser
 
-The agent builds the design with fonts, separate images and editable HTML/CSS, then takes a screenshot at the agreed viewport size.
+The agent builds the design directly in the agreed stack, using fonts, separate images and editable controls. It checks the running project and takes a screenshot at the agreed viewport size. A plain HTML preview does not count as a verified React or Next.js result.
 
 **Quick** shows the first checked set. **Thorough** adds one internal revision pass. Research permission is separate from either mode.
 
@@ -113,6 +125,8 @@ Both apps use the same instructions. The agent needs local file access and a bro
 Research needs web search and a way to inspect reference images or pages. Image generation needs a separately connected tool; without one, use supplied or appropriately licensed assets, or agree on an image-free direction. Tools connected in Codex do not automatically become available in Claude Code. A paid UI plugin is not required.
 
 Without browser capture, the result remains an unverified prototype, not a final code-faithful reference.
+
+React and Next.js outputs need a suitable Node.js environment and project dependencies. The agent must check the generated project's build, visible interactions and browser output. The skill supplies instructions, not a prebuilt converter or a bundled framework. Its repository tests do not establish that every generated React/Next.js project works; each output needs its own runtime checks.
 
 Claude Code installation from a local checkout has been checked with skills CLI 1.7.0. The full design workflow still needs verification in an authenticated Claude Code session.
 

@@ -25,9 +25,9 @@ If a layer cannot be mapped, explain the limitation while it is still a proposal
 
 For option exploration, build only what is needed to prove the requested section and target viewport:
 
-- static semantic HTML;
+- semantic markup in the agreed HTML/CSS/JavaScript, React, Next.js or existing project target;
 - scoped CSS and exact tokens;
-- only the JavaScript required for a visible state;
+- only the components and JavaScript required for an agreed visible state;
 - real or explicitly labeled demo content;
 - deterministic assets.
 
@@ -47,11 +47,13 @@ Record:
 - screenshot path;
 - continuation screenshot path when requested;
 - prototype path;
+- selected stack and actual page/component entry file;
+- project run command, preview route and build/type-check results where applicable;
 - font names and file paths or URLs;
 - asset list;
 - known fidelity limits.
 
-The screenshot must come from the prototype. Never treat an image-generation output of the whole interface as the final reference.
+The screenshot must come from the actual selected target's running prototype. An HTML-only screenshot cannot verify a React or Next.js deliverable. Follow [implementation-targets.md](implementation-targets.md) for runtime-specific checks, including client interactions and hydration. Never treat an image-generation output of the whole interface as the final reference.
 
 ## Comparison
 

@@ -142,3 +142,41 @@ test('reference stage accepts explicit system fonts and existing files', async t
   const report = await auditDirectionSet(manifest([direction('one'), direction('two')]), {stage: 'reference', baseDir: root});
   assert.equal(report.ok, true);
 });
+
+test('artifact audit accepts actual React and Next.js entry files without requiring HTML copies', async t => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'direction-framework-audit-'));
+  t.after(async () => fs.rm(root, {recursive: true, force: true}));
+  const directions = [];
+  for (const [id, entry, stack] of [
+    ['react-view', 'src/App.tsx', 'react'],
+    ['next-view', 'app/page.tsx', 'nextjs'],
+  ]) {
+    await fs.mkdir(path.dirname(path.join(root, entry)), {recursive: true});
+    await fs.writeFile(path.join(root, entry), 'export default function Page() { return <main>Reference</main>; }');
+    // File-existence fixtures only: this audit does not compile or render a framework.
+    await fs.writeFile(path.join(root, `${id}.png`), Buffer.from([137, 80, 78, 71]));
+    directions.push(direction(id, {implementation: {
+      prototype: entry, screenshot: `${id}.png`, assets: [], fonts: ['system:Georgia'],
+      stack, runCommand: 'npm run dev', previewRoute: '/', buildCheck: 'not-run-in-file-audit',
+    }}));
+  }
+  const report = await auditDirectionSet(manifest(directions), {stage: 'reference', baseDir: root});
+  assert.equal(report.ok, true, report.errors.join('\n'));
+  await assert.rejects(fs.stat(path.join(root, 'index.html')), {code: 'ENOENT'});
+});
+
+test('an HTML fallback does not satisfy a manifest pointing at a missing Next.js page', async t => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'direction-missing-framework-'));
+  t.after(async () => fs.rm(root, {recursive: true, force: true}));
+  await fs.writeFile(path.join(root, 'fallback.html'), '<main>Unverified fallback</main>');
+  await fs.writeFile(path.join(root, 'view.png'), Buffer.from([137, 80, 78, 71]));
+  const next = direction('next-view', {implementation: {
+    prototype: 'app/page.tsx', screenshot: 'view.png', assets: [], fonts: ['system:Georgia'], stack: 'nextjs',
+  }});
+  const plain = direction('plain-view', {implementation: {
+    prototype: 'fallback.html', screenshot: 'view.png', assets: [], fonts: ['system:Arial'],
+  }});
+  const report = await auditDirectionSet(manifest([next, plain]), {stage: 'reference', baseDir: root});
+  assert.equal(report.ok, false);
+  assert.ok(report.errors.some(error => error.includes('prototype does not exist: app/page.tsx')));
+});

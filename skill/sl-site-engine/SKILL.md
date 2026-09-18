@@ -1,6 +1,6 @@
 ---
 name: sl-site-engine
-description: Use when a user wants one or several website or section references to explore, compare, or approve visual directions before production implementation. Not for implementing an already specified exact design or standalone promotional artwork.
+description: Use when a user wants one or several website or section references to explore, compare, or approve visual directions, or to build the final browser reference for a direction selected in this workflow. Not for standalone promotional artwork or unrelated application development.
 ---
 
 # SL Site Engine
@@ -16,6 +16,8 @@ Read the request and relevant project material first. Complete the compact prefe
 Keep user taste separate from technical correctness and this skill's explicit design exclusions. Decorative section/card numbering and small captions paired with ornamental lines are excluded from its design vocabulary, not opt-in preferences. Other explicit rejections and selected component libraries apply to the current task. “Choose for me” permits proposed choices, not a claim that the user already approved them.
 
 Read [references/anti-slop.md](references/anti-slop.md) before creating copy or UI. It distinguishes hard failures, excluded treatments, configurable preferences and contextual warning signs.
+
+Resolve the implementation target using [references/implementation-targets.md](references/implementation-targets.md) before coding. Keep an existing project's stack and any explicit choice. For a new undecided project, offer HTML/CSS/JavaScript, React, Next.js (React), or help choosing. Ask once in the compact intake or selected-direction checkpoint; do not replace visual preferences with a technical questionnaire. Record the target and whether it was supplied, detected, chosen or recommended.
 
 ## Explore and agree visually
 
@@ -37,9 +39,9 @@ Read [references/media-strategy.md](references/media-strategy.md) when selecting
 
 ## Build the final reference
 
-After direction approval or explicit delegation, read [references/fidelity.md](references/fidelity.md). Build only the requested page/sections and viewport in lean HTML/CSS. Do not expand an isolated hero into a full site. For a page, give the next requested section a meaningful continuation rather than generic filler.
+After direction approval or explicit delegation, read [references/fidelity.md](references/fidelity.md) and the selected target's section in [references/implementation-targets.md](references/implementation-targets.md). Build only the requested page/sections and viewport directly in the agreed stack. Do not expand an isolated hero into a full site. For a page, give the next requested section a meaningful continuation rather than generic filler.
 
-Use actual fonts and local assets. Render in a real browser at the declared viewport after fonts/images load. Keep editable UI text and controls in code. Only that render is the final code-faithful reference; no whole-interface generated raster qualifies.
+Use actual fonts and local assets. Start the actual target project and render it in a real browser at the declared viewport after fonts/images load. Keep editable UI text and controls in code. Only that render is the final code-faithful reference; no whole-interface generated raster qualifies. A standalone HTML sketch is not evidence that a React or Next.js implementation works. Check the target's build and visible interactions; disclose checks that could not run.
 
 If a UI library was selected, use its real source. For an available SL UI Library plugin, follow `use-sl-ui`: discover, inspect and export an appropriate component, adapt palette/geometry, preserve applicable keyboard/focus/reduced-motion behavior, and record ID/version/adaptations. Do not use an unrelated save/success animation for navigation or booking. Disclose unavailable components; do not claim lookalikes came from the library. The public skill does not require that plugin when none was selected.
 
@@ -51,6 +53,6 @@ Keep a compact review tied to the screenshot. For a local correction, change onl
 
 ## Present and hand off
 
-Show one option large, with simple navigation to others. Each gets a project-specific name, screenshot and one sentence on the idea/tradeoff. State sketch versus final-reference status, viewport, exact fonts and material fidelity limits. Do not dump internal review notes by default.
+Show one option large, with simple navigation to others. Each gets a project-specific name, screenshot and one sentence on the idea/tradeoff. State sketch versus final-reference status, implementation target, entry route/file, run command, viewport, exact fonts and material fidelity limits. Distinguish browser/build checks from untested production integrations. Do not dump internal review notes by default.
 
 The screenshot records this implementation in the declared browser conditions, not every device or later production edit. After selection, implement responsive behavior and real states only within the user's requested scope; compare the resulting code to the approved reference at matching conditions.
