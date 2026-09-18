@@ -1,6 +1,6 @@
 # SL Site Engine
 
-A Codex skill for choosing a website design and getting its browser preview with editable HTML and CSS.
+A skill for Codex and Claude Code. Choose a website design and get its browser preview with editable HTML and CSS.
 
 ![SL Site Engine cover](cover.png)
 
@@ -16,15 +16,40 @@ Ask for one page or several directions. Photos and illustrations can be generate
 
 ## Installation
 
-Run this in your terminal:
+Run the command for your app in a terminal.
+
+**Codex**
 
 ```sh
 npx skills add SLtowl/sl-site-engine -g -a codex -y
 ```
 
-Requires Node.js/npm. Installation uses the open-source [skills CLI](https://github.com/vercel-labs/skills). Start a new Codex task after installing.
+**Claude Code**
+
+```sh
+npx skills add SLtowl/sl-site-engine -g -a claude-code -y
+```
+
+Requires Node.js/npm. Installation uses the open-source [skills CLI](https://github.com/vercel-labs/skills). Start a new task or session after installing. Omit `-g` to install only in the current project.
+
+<details>
+<summary>Manual installation for Claude Code</summary>
+
+Download this repository and copy the complete [`skill/sl-site-engine`](skill/sl-site-engine) folder into `.claude/skills/sl-site-engine/` in your project, or `~/.claude/skills/sl-site-engine/` for all projects. Keep its references, scripts and assets together with `SKILL.md`.
+
+Claude Code uses the same skill files; no separate plugin is required. See the [Claude Code skills documentation](https://code.claude.com/docs/en/skills).
+
+</details>
 
 ## Usage
+
+In Codex, use `$sl-site-engine` in your request. In Claude Code, start with `/sl-site-engine`:
+
+```text
+/sl-site-engine Create a homepage reference for my bakery. Help me choose the layout, colors and buttons.
+```
+
+The examples below use Codex syntax. For Claude Code, replace `Use $sl-site-engine to` with `/sl-site-engine`.
 
 **Choose a design for one page**
 
@@ -83,7 +108,13 @@ Colors, rounded corners and patterns follow the brief. Business claims must be s
 <details>
 <summary>Requirements and limits</summary>
 
-The agent needs local file access and a browser to build and capture pages. Search and image generation require their own tools. A paid UI plugin is not required.
+Both apps use the same instructions. The agent needs local file access and a browser tool capable of opening local pages and taking screenshots, such as a configured Playwright setup. The skill does not install a browser, image generator or UI library.
+
+Research needs web search and a way to inspect reference images or pages. Image generation needs a separately connected tool; without one, use supplied or appropriately licensed assets, or agree on an image-free direction. Tools connected in Codex do not automatically become available in Claude Code. A paid UI plugin is not required.
+
+Without browser capture, the result remains an unverified prototype, not a final code-faithful reference.
+
+Claude Code installation from a local checkout has been checked with skills CLI 1.7.0. The full design workflow still needs verification in an authenticated Claude Code session.
 
 Early sketches can use generated imagery and are labelled as sketches. Only the final browser capture shows the implemented page.
 
