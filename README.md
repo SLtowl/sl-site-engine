@@ -1,13 +1,10 @@
-![SL Site Engine — website directions in a deep, dark 3D space](cover.png)
+![SL Site Engine cover](cover.png)
 
 <h1 align="center">SL Site Engine</h1>
-<p align="center"><strong>Beyond default pages. New directions for every brief.</strong></p>
-<p align="center">A design-exploration skill for Codex — from a short brief to a reference rendered from real code.</p>
-<p align="center"><a href="#install">Install</a> · <a href="#the-idea-in-motion">Watch</a> · <a href="#how-it-works">Workflow</a></p>
+<p align="center">Explore website designs in Codex and preview them from working HTML and CSS.</p>
+<p align="center"><a href="#install">Install</a> · <a href="#video">Video</a> · <a href="#how-it-works">How it works</a></p>
 
-Build a direction around the business, not a preset. Choose the composition, agree on the content and controls, then see an actual browser screenshot of the proposed page. Generated photography and illustrations can enrich the design; the typography and interface stay editable in code.
-
-This is an early public release. It guides the process and checks fidelity; it does not promise that every output will be beautiful or better than an unassisted result.
+Describe your business and choose a layout. The skill helps you settle the content, colors and controls, then builds a prototype and captures it in a browser. You get the screenshot and the code behind it.
 
 ## Install
 
@@ -15,56 +12,58 @@ This is an early public release. It guides the process and checks fidelity; it d
 npx skills add SLtowl/sl-site-engine -g -a codex -y
 ```
 
-Uses the open-source [skills CLI](https://github.com/vercel-labs/skills). Start a new Codex task after installation, then ask naturally:
+Installation uses the open-source [skills CLI](https://github.com/vercel-labs/skills) and requires Node.js/npm. Start a new Codex task after installing:
 
-> Use $sl-site-engine to create a homepage reference for my bakery. I want a distinctive design, but I haven't chosen a composition yet.
+> Use $sl-site-engine to create a homepage reference for my bakery. Help me choose the layout.
 
-Or explore a set:
+To compare several designs:
 
-> Use $sl-site-engine to explore 10 distinct directions for my product website. Start with the first screen.
+> Use $sl-site-engine to create 10 different directions for my product website. Start with the first screen.
 
-Node.js/npm is needed for the installation command and optional development tools. The skill itself is instructions, not a running service. Final references require an agent with local file access and browser rendering; image generation and inspiration search depend on the tools available in your environment. No paid UI plugin is required.
+The skill contains instructions for the agent. It needs access to local files and a browser to build and capture pages. Search and image generation require the corresponding tools. A paid UI plugin is not required.
 
-## The idea in motion
+## Video
 
-[![Ten distinct website directions move as physical 3D plaques through a deep black studio space](assets/media/sl-site-engine-preview.gif)](assets/media/sl-site-engine.mp4)
+[![Website designs on floating 3D panels](assets/media/sl-site-engine-preview.gif)](assets/media/sl-site-engine.mp4)
 
-[Watch or download the full MP4](https://github.com/SLtowl/sl-site-engine/raw/refs/heads/main/assets/media/sl-site-engine.mp4) · 8 seconds · 60 FPS · 1920 × 1080 · silent loop
+[Watch or download the MP4](https://github.com/SLtowl/sl-site-engine/raw/refs/heads/main/assets/media/sl-site-engine.mp4) · 8 seconds · 60 FPS · 1920 × 1080 · no audio
 
-The cover and film are promotional artwork, not screenshots of generated working websites. The GIF is a lighter preview; the full video is 60 FPS.
+The cover and video are promotional artwork. They do not show working websites. The GIF is a lower-frame-rate preview.
 
 ## How it works
 
-| Stage | What you see |
+| Step | What happens |
 | --- | --- |
-| Brief | Up to three initial questions about purpose, brand voice, colors, control shape and visual richness. Existing answers are reused. |
-| Research | A recommended search for relevant visual ideas, started only with your permission. Quick and Thorough effort modes remain separate choices. |
-| Composition | Usually 2–3 visual sketches for one final reference, with a clear difference in focus and reading flow. A requested direction set supplies its own choice. |
-| Agreement | A compact content/action map and two density sketches of the selected direction: calmer and richer. With a connected component library, 2–3 real button variants and a recommendation. |
-| Reference | The chosen design built with real fonts, separate assets and editable HTML/CSS, then captured in a browser at the declared viewport. |
-| Refinement | A local correction changes that layer; rejecting the whole direction reopens composition. Accepted choices and frozen comparisons are preserved. |
+| Brief | The agent asks up to three initial questions covering the business, brand voice, colors, button shape and amount of detail. It uses answers you have already given. |
+| Research | It offers to look for relevant designs online. Search starts only if you agree. |
+| Layout | For a single reference, you usually choose from two or three sketches. If you requested several directions, you choose from that set. |
+| Details | You agree on the content and actions, then compare a calmer and a richer version. With a connected component library, the agent shows two or three suitable button options and recommends one. |
+| Build | It creates the page with editable text, fonts, images and HTML/CSS, then takes a browser screenshot. |
+| Changes | A request to change one detail stays local. If you reject the whole design, the agent revisits the layout. Approved choices and saved comparisons are preserved. |
 
-Expressive is the starting point, not a requirement to add more decoration. You can choose a restrained design or explicitly delegate choices. The skill does not repeatedly ask for decisions you have already made.
+The default is an expressive design. You can ask for less detail or let the agent make the choices.
 
-**Quick** shows the first checked set. **Thorough** adds one bounded internal revision cycle, not endless regeneration. Optional research never starts merely because Thorough was selected.
+**Quick** returns the first checked set. **Thorough** adds one internal revision pass. Neither mode gives permission to search on its own.
 
-## Code-faithful by construction
+## What you get
 
-The **final reference** is a screenshot of its actual implementation, not concept art to reconstruct later. Fonts, editable text, controls, spacing, crops and layout already exist in the prototype. Generated media can supply a subject, texture or illustration — not the finished interface.
+The final reference is a screenshot of the supplied prototype. Fonts, spacing, image crops and controls are already in the code. Image generation can provide photos, illustrations and textures; text and interface elements remain editable.
 
-An early sketch may use generated imagery to explore composition and is labelled accordingly; it is not a pixel-fidelity promise. A browser reference matches the supplied code at its recorded viewport, fonts, assets and browser conditions — not every device or later edit. Responsive layouts, backend, payments and real ordering flows are separate work unless requested.
+Early sketches are labelled as sketches and may use generated imagery. They are not exact previews of the implementation.
 
-See [reference fidelity](skill/sl-site-engine/references/fidelity.md) and [media strategy](skill/sl-site-engine/references/media-strategy.md).
+The final screenshot matches the code under the recorded browser conditions, including viewport, fonts and assets. Other screen sizes need their own checks. Responsive layouts, backend services, payments and ordering flows are separate work unless requested.
 
-## Anti-slop gate
+See [reference accuracy](skill/sl-site-engine/references/fidelity.md) and [using images](skill/sl-site-engine/references/media-strategy.md).
 
-No fabricated reviews, prices, metrics or guarantees presented as real. No generated image passed off as a working interface. No claimed UI-library provenance without real components.
+## Design checks
 
-Decorative section numbers and tiny captions attached to ornamental lines are excluded. Useful prices, dates, ordered steps, navigation and accessibility indicators remain available. Other visual choices — palette, rounding, meaningful icons, illustration and pattern richness — follow the brief.
+The skill checks the layout, size of the main subject, copy, controls and use of images. It excludes decorative section numbers and tiny labels paired with ornamental lines. Useful prices, dates, steps and navigation are allowed.
 
-The review also checks composition, visible subject scale, natural copy, usable actions and integration of imagery. Removing every detail is not the goal. There is no numerical beauty guarantee or claim of eliminating all AI slop.
+Colors, rounded corners, icons and patterns follow the brief. Reviews, prices and business claims must not be invented and presented as facts. If the agent says it used a component library, it must use real components from that library and disclose anything unavailable.
 
-The complete gate is documented in [the anti-slop reference](skill/sl-site-engine/references/anti-slop.md). Sets of three or more directions also pass a deterministic manifest audit for deep-axis diversity, asset paths, fonts, and visible-element rationale.
+Sets of three or more directions also get a script-based check for meaningful differences, asset paths, fonts and reasons for including visible elements. Full rules are in the [design checklist](skill/sl-site-engine/references/anti-slop.md).
+
+This is an early release. Technical checks help catch errors, but they cannot establish whether a design looks better. The skill does not guarantee a better result than working without it.
 
 ## Development
 
@@ -73,7 +72,9 @@ npm install
 npm run verify
 ```
 
-`npm run verify` runs skill-resource checks, direction-audit tests and repository/media integrity checks. It does not regenerate the cover or film. These technical checks do not measure aesthetic superiority.
+Verification checks skill resources, direction-audit behavior and repository/media integrity. It does not regenerate the cover or video.
+
+To work on the video:
 
 ```sh
 npm run motion:studio
@@ -81,9 +82,11 @@ npm run motion:poster
 npm run motion:render
 ```
 
-The installable skill lives in `skill/sl-site-engine/`, separate from promotional media. It works without SL UI Library; if you select [SL UI Library](https://github.com/SLtowl/sl-ui-library) or another connected library, the agent must inspect real components and disclose anything unavailable.
+The skill is in `skill/sl-site-engine/`. Video source is in `motion/`. The MP4 contains 480 frames at 60 FPS, encoded as H.264 without audio. See [media sources](assets/media/PROVENANCE.md).
 
-The film source is in `motion/`; the MP4 is H.264, 1920 × 1080, 60 FPS, 480 frames, eight seconds, without audio. See [media provenance](assets/media/PROVENANCE.md). Also by SL: [Graphite Dashboard Design](https://github.com/SLtowl/graphite-dashboard-design).
+The skill works without [SL UI Library](https://github.com/SLtowl/sl-ui-library). You can connect it or another component library if you want to use its controls.
+
+Also by SL: [Graphite Dashboard Design](https://github.com/SLtowl/graphite-dashboard-design).
 
 ## License
 
