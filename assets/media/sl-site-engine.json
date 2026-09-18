@@ -1,0 +1,20 @@
+{
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "durationFrames": 480,
+    "durationSeconds": 8,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  "preview": {
+    "width": 720,
+    "height": 405,
+    "fps": 12,
+    "format": "gif"
+  },
+  "loopMeanChannelDifference": 1.06933,
+  "sourceLoopMeanChannelDifference": 0,
+  "verifiedWith": "ffprobe metadata; Sharp comparison of decoded MP4 endpoints; rendered and encoded corner/overlap luminance checks"
+}

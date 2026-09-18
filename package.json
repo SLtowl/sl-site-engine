@@ -1,0 +1,28 @@
+{
+  "name": "sl-site-engine-skill",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Development, media, and behavioral tests for the SL Site Engine skill.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "audit:example": "node skill/sl-site-engine/scripts/audit-direction-set.mjs examples/rune-directions/direction-set.json --stage reference",
+    "capture:example": "node examples/rune-directions/capture.mjs",
+    "motion:studio": "remotion studio motion/src/index.jsx --public-dir=motion/public",
+    "motion:poster": "remotion still motion/src/index.jsx SL-Site-Engine assets/media/site-engine-poster.png --frame=0 --public-dir=motion/public --bundle-cache=false",
+    "motion:render": "remotion render motion/src/index.jsx SL-Site-Engine assets/media/sl-site-engine.mp4 --public-dir=motion/public --bundle-cache=false --codec=h264 --crf=20 --pixel-format=yuv420p --image-format=jpeg --jpeg-quality=90",
+    "verify": "npm run capture:example && npm test && npm run audit:example"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.525",
+    "playwright": "1.62.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.525",
+    "sharp": "0.35.4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

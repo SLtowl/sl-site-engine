@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">SL Site Engine</title>
+  <desc id="desc">Ten different compositions arranged around one bright direction line.</desc>
+  <rect width="512" height="512" fill="#F4F0E8"/>
+  <g fill="none" stroke="#151515" stroke-width="10">
+    <path d="M48 48h176v176H48z"/>
+    <path d="M288 48h176v64H288zM288 144h176v80H288z"/>
+    <path d="M48 288h64v176H48zM144 288h80v176h-80z"/>
+    <path d="M288 288h176v176H288z"/>
+  </g>
+  <path d="M280 264 464 80" stroke="#C28A5A" stroke-width="18"/>
+  <path d="m421 80h43v43" fill="none" stroke="#C28A5A" stroke-width="18"/>
+</svg>

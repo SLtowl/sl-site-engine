@@ -1,0 +1,7 @@
+interface:
+  display_name: "SL Site Engine"
+  short_description: "Endless code-faithful site directions"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#C28A5A"
+  default_prompt: "Use $sl-site-engine to create several meaningfully different, code-faithful directions for my page."

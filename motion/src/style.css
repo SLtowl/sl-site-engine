@@ -1,0 +1,11 @@
+*{box-sizing:border-box}
+html,body{margin:0;background:#020304}
+.film{overflow:hidden;background:#020304;perspective:1900px}
+.deep-void{position:absolute;inset:-8%;background:radial-gradient(ellipse at 51% 43%,#171c20 0%,#0b0e11 38%,#030405 72%,#010203 100%)}
+.scene-camera{position:absolute;inset:-2%;width:104%;height:104%;transform-origin:50% 50%;transform-style:preserve-3d;will-change:transform}
+.accepted-scene{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.screen-cover{will-change:opacity}
+.top-light{position:absolute;left:16%;right:3%;top:-19%;height:43%;z-index:20;background:radial-gradient(ellipse at 54% 100%,rgba(207,220,231,.16),rgba(132,151,168,.05) 37%,transparent 72%);filter:blur(54px);mix-blend-mode:screen;pointer-events:none}
+.vignette{position:absolute;inset:0;z-index:40;pointer-events:none;box-shadow:inset 0 0 180px rgba(0,0,0,.65);background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 20%,transparent 82%,rgba(0,0,0,.22))}
+.grain{position:absolute;inset:-40%;z-index:50;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.84' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");transform:rotate(3deg)}
+@media(prefers-reduced-motion:reduce){.scene-camera{transform:none!important}.screen-cover{opacity:0!important}}

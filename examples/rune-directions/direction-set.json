@@ -1,0 +1,111 @@
+{
+  "brief": {
+    "subject": "RUNE 01, a fictional compact spatial speaker",
+    "audience": "Design-conscious people choosing an object for a quiet living space",
+    "pageJob": "Introduce the product, establish its physical character, and lead into its material construction",
+    "primaryAction": "Explore RUNE 01"
+  },
+  "viewport": {"width": 1440, "height": 900},
+  "directions": [
+    {
+      "id": "quiet-monolith",
+      "name": "Quiet Monolith",
+      "idea": "Make the object the only bright presence and postpone room context until the second section.",
+      "continuation": "reveal-proof",
+      "axes": {"thesis":"object-as-presence","primaryObject":"isolated-product","hierarchy":"claim-object-materials","composition":"dark-offset-monolith","representation":"transparent-product-render","typography":"monumental-neutral-sans"},
+      "tokens": {"palette":["#07090a","#f0f2f2","#9ea8ae"],"fonts":["Instrument Sans"],"radius":"Circular sound-field guides only","density":"Sparse and monumental"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/01-quiet-monolith-hero.png","secondScreenshot":"screenshots/01-quiet-monolith-next.png","assets":["media/rune-product.png","media/rune-detail.png"],"fonts":["fonts/instrument-sans-variable.woff2"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"Concentric field","reason":"brand","evidence":"Frames the speaker as the source of a room-scale listening field"},{"element":"Three-material footer","reason":"content","evidence":"Names only the materials visible in the supplied product asset"}]}
+    },
+    {
+      "id": "architectural-room",
+      "name": "Architectural Room",
+      "idea": "Lead with place and atmosphere so the product is read as part of architecture rather than equipment.",
+      "continuation": "deepen-story",
+      "axes": {"thesis":"room-before-object","primaryObject":"listening-room","hierarchy":"place-claim-object","composition":"full-bleed-room-overlay","representation":"architectural-campaign-photo","typography":"editorial-display-serif"},
+      "tokens": {"palette":["#101315","#f4efe5","#c9a37b"],"fonts":["Instrument Sans","Instrument Serif"],"radius":"One circular index marker","density":"Editorial and spacious"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/02-architectural-room-hero.png","secondScreenshot":"screenshots/02-architectural-room-next.png","assets":["media/rune-room.png","media/rune-product.png"],"fonts":["fonts/instrument-sans-variable.woff2","fonts/instrument-serif-regular.woff2"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"Room photograph","reason":"content","evidence":"Shows the stated relationship between product and architecture"},{"element":"Room index","reason":"hierarchy","evidence":"Identifies the first scene without inventing performance data"}]}
+    },
+    {
+      "id": "material-index",
+      "name": "Material Index",
+      "idea": "Explain construction before emotion through a precise object index and a labeled material detail.",
+      "continuation": "reveal-proof",
+      "axes": {"thesis":"construction-is-value","primaryObject":"material-assembly","hierarchy":"index-product-specification","composition":"technical-grid-triptych","representation":"documented-object-study","typography":"condensed-industrial-index"},
+      "tokens": {"palette":["#f1f1ed","#16191a","#8a9294"],"fonts":["Instrument Sans","Barlow Condensed"],"radius":"Small numbered markers only","density":"Structured and technical"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/03-material-index-hero.png","secondScreenshot":"screenshots/03-material-index-next.png","assets":["media/rune-product.png","media/rune-detail.png"],"fonts":["fonts/instrument-sans-variable.woff2","fonts/barlow-condensed-medium.ttf"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"Material list","reason":"content","evidence":"Maps directly to aluminium, glass, rim, and textile visible in the asset"},{"element":"Numbered detail markers","reason":"hierarchy","evidence":"Connect the written assembly order to the macro image"}]}
+    },
+    {
+      "id": "type-and-object",
+      "name": "Type & Object",
+      "idea": "Fuse the wordmark and silhouette into one bold graphic gesture while keeping details for the next screen.",
+      "continuation": "deepen-story",
+      "axes": {"thesis":"name-becomes-environment","primaryObject":"word-and-silhouette","hierarchy":"word-object-caption","composition":"oversized-type-layer","representation":"typographic-product-collage","typography":"display-serif-as-image"},
+      "tokens": {"palette":["#ded2c1","#151515","#241513"],"fonts":["Instrument Sans","Instrument Serif"],"radius":"No rounded UI","density":"Graphic and bold"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/04-type-and-object-hero.png","secondScreenshot":"screenshots/04-type-and-object-next.png","assets":["media/rune-product.png","media/rune-room.png"],"fonts":["fonts/instrument-sans-variable.woff2","fonts/instrument-serif-regular.woff2"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"Oversized RUNE word","reason":"brand","evidence":"Turns the fictional product name into the visual frame"},{"element":"Room photograph in section two","reason":"content","evidence":"Resolves the promise that the object belongs to architecture"}]}
+    },
+    {
+      "id": "product-console",
+      "name": "Product Console",
+      "idea": "Make visual inspection the hero action through a restrained product-view interface instead of a campaign page.",
+      "continuation": "reveal-proof",
+      "axes": {"thesis":"inspection-before-story","primaryObject":"product-viewer","hierarchy":"viewer-controls-material-panel","composition":"rail-stage-inspector","representation":"interactive-object-console","typography":"compact-utility-sans"},
+      "tokens": {"palette":["#080d11","#dbe3e7","#7f929d"],"fonts":["Instrument Sans"],"radius":"Square panels with one elliptical field","density":"Compact interface"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/05-product-console-hero.png","secondScreenshot":"screenshots/05-product-console-next.png","assets":["media/rune-product.png","media/rune-room.png"],"fonts":["fonts/instrument-sans-variable.woff2"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"View rail","reason":"action","evidence":"Exposes object, aperture, and room as the three inspection states"},{"element":"Material panel","reason":"content","evidence":"Uses only visible construction attributes instead of invented specifications"}]}
+    },
+    {
+      "id": "object-archive",
+      "name": "Object Archive",
+      "idea": "Frame the speaker as a documented design artifact using a museum plate and a measured material note.",
+      "continuation": "reveal-proof",
+      "axes": {"thesis":"object-as-archive-piece","primaryObject":"museum-plate","hierarchy":"archive-title-plate-note","composition":"framed-plate-ledger","representation":"catalogued-product-specimen","typography":"museum-editorial-pairing"},
+      "tokens": {"palette":["#e6e0d4","#1c201e","#d7d0c3"],"fonts":["Instrument Sans","Instrument Serif"],"radius":"No rounded UI","density":"Measured and archival"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/06-object-archive-hero.png","secondScreenshot":"screenshots/06-object-archive-next.png","assets":["media/rune-product.png","media/rune-detail.png"],"fonts":["fonts/instrument-sans-variable.woff2","fonts/instrument-serif-regular.woff2"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"Object plate","reason":"hierarchy","evidence":"Keeps the full silhouette available for close study"},{"element":"Archive note","reason":"content","evidence":"Explains the visible vertical body and material junction"}]}
+    },
+    {
+      "id": "sound-field",
+      "name": "Sound Field",
+      "idea": "Visualize the room-scale listening idea around the product with a restrained field that has semantic purpose.",
+      "continuation": "deepen-story",
+      "axes": {"thesis":"sound-fills-space","primaryObject":"radial-listening-field","hierarchy":"claim-field-product","composition":"concentric-center-stage","representation":"semantic-sound-diagram","typography":"expressive-humanist-sans"},
+      "tokens": {"palette":["#030405","#eff2f3","#ad855e"],"fonts":["Instrument Sans"],"radius":"Concentric field geometry only","density":"Atmospheric and sparse"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/07-sound-field-hero.png","secondScreenshot":"screenshots/07-sound-field-next.png","assets":["media/rune-product.png","media/rune-room.png"],"fonts":["fonts/instrument-sans-variable.woff2"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"Concentric field","reason":"brand","evidence":"Represents the spatial listening proposition rather than generic decoration"},{"element":"Room scene","reason":"content","evidence":"Section two grounds the abstract field in a real architectural context"}]}
+    },
+    {
+      "id": "paper-review",
+      "name": "Paper Review",
+      "idea": "Use editorial argument and material writing as the lead for an audience that wants design rationale.",
+      "continuation": "deepen-story",
+      "axes": {"thesis":"argument-builds-desire","primaryObject":"editorial-essay","hierarchy":"headline-deck-object","composition":"broadsheet-column-layout","representation":"product-design-review","typography":"newspaper-serif-and-sans"},
+      "tokens": {"palette":["#e3dac9","#171816","#575d60"],"fonts":["Instrument Sans","Instrument Serif"],"radius":"No rounded UI","density":"Text-led editorial"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/08-paper-review-hero.png","secondScreenshot":"screenshots/08-paper-review-next.png","assets":["media/rune-product.png","media/rune-detail.png"],"fonts":["fonts/instrument-sans-variable.woff2","fonts/instrument-serif-regular.woff2"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"Editorial deck","reason":"content","evidence":"States the visible three-material reduction without inflated marketing claims"},{"element":"Two-column material essay","reason":"hierarchy","evidence":"Separates the glass-and-rim argument from the textile-base argument"}]}
+    },
+    {
+      "id": "crop-study",
+      "name": "Crop Study",
+      "idea": "Create physical impact with an oversized product crop and use section two for the exact material junction.",
+      "continuation": "reveal-proof",
+      "axes": {"thesis":"scale-creates-impact","primaryObject":"oversized-product-crop","hierarchy":"crop-claim-action","composition":"asymmetric-edge-crop","representation":"photographic-form-study","typography":"large-direct-sans"},
+      "tokens": {"palette":["#0b1821","#e9eef1","#94a7b2"],"fonts":["Instrument Sans"],"radius":"No rounded UI","density":"High-impact and direct"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/09-crop-study-hero.png","secondScreenshot":"screenshots/09-crop-study-next.png","assets":["media/rune-product.png","media/rune-detail.png"],"fonts":["fonts/instrument-sans-variable.woff2"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"Oversized object crop","reason":"hierarchy","evidence":"Uses physical scale to make the product body the first read"},{"element":"Macro second screen","reason":"content","evidence":"Answers the intentionally incomplete hero silhouette with construction detail"}]}
+    },
+    {
+      "id": "direct-catalogue",
+      "name": "Direct Catalogue",
+      "idea": "Expose the product, material facts, and primary action immediately for the clearest commercial route.",
+      "continuation": "move-to-task",
+      "axes": {"thesis":"clarity-is-premium","primaryObject":"product-and-action","hierarchy":"product-title-action-specs","composition":"retail-split-and-spec-row","representation":"direct-commerce-layout","typography":"commercial-neutral-sans"},
+      "tokens": {"palette":["#efefec","#17191a","#747a7c"],"fonts":["Instrument Sans","Instrument Serif"],"radius":"No rounded UI","density":"Clear commercial"},
+      "implementation": {"prototype":"index.html","screenshot":"screenshots/10-direct-catalogue-hero.png","secondScreenshot":"screenshots/10-direct-catalogue-next.png","assets":["media/rune-product.png","media/rune-room.png"],"fonts":["fonts/instrument-sans-variable.woff2","fonts/instrument-serif-regular.woff2"]},
+      "audit": {"hardFailures":[],"warningSignals":[],"warningRationale":"","visibleElements":[{"element":"Primary product action","reason":"action","evidence":"Makes exploration available in the first viewport"},{"element":"Material row","reason":"content","evidence":"Surfaces only construction visible in the product render"}]}
+    }
+  ]
+}

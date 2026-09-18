@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">SL Site Engine</title>
+  <rect width="64" height="64" fill="#F4F0E8"/>
+  <path d="M8 8h20v20H8zm28 0h20v8H36zm0 12h20v8H36zM8 36h8v20H8zm12 0h8v20h-8zm16 0h20v20H36z" fill="#151515"/>
+  <path d="M36 36h20v5H36z" fill="#C28A5A"/>
+</svg>

@@ -1,0 +1,14 @@
+node_modules/
+.validator-deps/
+.DS_Store
+Thumbs.db
+*.log
+README.ru.local.md
+tmp-motion-check/
+.env
+.env.*
+*.pem
+*.key
+.local/
+.release-private/
+tests/anti-slop-behavioral.md
