@@ -26,9 +26,9 @@ The skill contains instructions for the agent. It needs access to local files an
 
 [![Website designs on floating 3D panels](assets/media/sl-site-engine-preview.gif)](assets/media/sl-site-engine.mp4)
 
-[Watch or download the MP4](https://github.com/SLtowl/sl-site-engine/raw/refs/heads/main/assets/media/sl-site-engine.mp4) · 8 seconds · 60 FPS · 1920 × 1080 · no audio
+[Watch or download the MP4](https://github.com/SLtowl/sl-site-engine/raw/refs/heads/main/assets/media/sl-site-engine.mp4)
 
-The cover and video are promotional artwork. They do not show working websites. The GIF is a lower-frame-rate preview.
+The cover and video are promotional artwork. They do not show working websites.
 
 ## How it works
 
@@ -65,24 +65,7 @@ Sets of three or more directions also get a script-based check for meaningful di
 
 This is an early release. Technical checks help catch errors, but they cannot establish whether a design looks better. The skill does not guarantee a better result than working without it.
 
-## Development
-
-```sh
-npm install
-npm run verify
-```
-
-Verification checks skill resources, direction-audit behavior and repository/media integrity. It does not regenerate the cover or video.
-
-To work on the video:
-
-```sh
-npm run motion:studio
-npm run motion:poster
-npm run motion:render
-```
-
-The skill is in `skill/sl-site-engine/`. Video source is in `motion/`. The MP4 contains 480 frames at 60 FPS, encoded as H.264 without audio. See [media sources](assets/media/PROVENANCE.md).
+## Related projects
 
 The skill works without [SL UI Library](https://github.com/SLtowl/sl-ui-library). You can connect it or another component library if you want to use its controls.
 
